@@ -1,9 +1,12 @@
-console.log("Hello from script.js!");
+function showDate() {
+  const date = new Date().toDateString();
+  document.body.insertAdjacentHTML("beforeend", `<p class="muted">Today is ${date}</p>`);
+}
 
-// makes heading text turn blue when clicked
-document.addEventListener("DOMContentLoaded", () => {
-  const heading = document.querySelector("h1");
-  heading.addEventListener("click", () => {
-    heading.style.color = "blue";
-  });
-});
+function init() {
+  console.log("Website loaded. Running init()...");
+
+  showDate();
+}
+
+document.addEventListener("DOMContentLoaded", init);
